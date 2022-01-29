@@ -98,6 +98,16 @@ impl<T: Default + Clone> Grid for Grid1<T> {
     }
 
     #[inline]
+    fn width(&self) -> usize {
+        self.width
+    }
+
+    #[inline]
+    fn height(&self) -> usize {
+        self.height
+    }
+
+    #[inline]
     fn get(&self, x: usize, y: usize) -> &T {
         &self.spaces[self.get_offset(x, y)]
     }

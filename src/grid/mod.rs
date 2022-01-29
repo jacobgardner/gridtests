@@ -1,9 +1,14 @@
 mod grid1;
 
+pub use grid1::Grid1;
+
 pub trait Grid {
     type Item;
 
     fn with_size(width: usize, height: usize) -> Self;
+
+    fn width(&self) -> usize;
+    fn height(&self) -> usize;
 
     fn get(&self, x: usize, y: usize) -> &Self::Item;
     fn get_mut(&mut self, x: usize, y: usize) -> &mut Self::Item;
