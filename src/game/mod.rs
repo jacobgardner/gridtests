@@ -42,21 +42,25 @@ pub fn populate_grid<G: Grid<Item = GridSpace>>(board: &str) -> G {
         );
     }
 
-
     let mut g = G::with_size(width, lines.len());
 
     for (y, &line) in lines.iter().enumerate() {
         for (x, char) in line.chars().enumerate() {
             match char {
-                'x' => g.set(x, y, GridSpace{ entity: GridEntity::Wall }),
-                '.' => {},
+                'x' => g.set(
+                    x,
+                    y,
+                    GridSpace {
+                        entity: GridEntity::Wall,
+                    },
+                ),
+                '.' => {}
                 _ => {}
             }
         }
     }
 
     g
-
 }
 
 impl Display for GridSpace {

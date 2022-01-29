@@ -15,6 +15,8 @@ pub trait Grid {
 
     fn set(&mut self, x: usize, y: usize, value: Self::Item);
 
-    fn iter<'a>(&'a self) -> Box<dyn Iterator<Item=(usize, usize, &'a Self::Item)> + 'a>;
-    fn iter_mut<'a>(&'a mut self) -> Box<dyn Iterator<Item=(usize, usize, &'a mut Self::Item)> + 'a>;
+    fn iter<'a>(&'a self) -> Box<dyn Iterator<Item = (usize, usize, &'a Self::Item)> + 'a>;
+    fn iter_mut<'a>(
+        &'a mut self,
+    ) -> Box<dyn Iterator<Item = (usize, usize, &'a mut Self::Item)> + 'a>;
 }

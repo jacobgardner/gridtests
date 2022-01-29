@@ -11,8 +11,6 @@ const t0: &'static str = include_str!("../test_grids/spiral.txt");
 fn main() {
     let g = game::populate_grid::<Grid1<_>>(t0);
 
-
-
     println!("{}", g);
 }
 
@@ -22,7 +20,7 @@ impl Display for Grid1<GridSpace> {
             for x in 0..self.width() {
                 write!(f, "{}", self.get(x, y))?;
             }
-                write!(f, "\n")?;
+            write!(f, "\n")?;
         }
 
         std::fmt::Result::Ok(())
